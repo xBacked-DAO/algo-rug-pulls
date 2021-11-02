@@ -1,0 +1,73 @@
+{
+  "name": "xbacked-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "classnames": "^2.2.6",
+    "dotenv": "^10.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "postcss-cli": "^7.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "prop-types": "^15.7.2",
+    "query-string": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-emoji-render": "^1.2.4",
+    "react-hook-form": "^7.10.0",
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-select": "^4.3.1",
+    "react-spinners": "^0.10.6",
+    "react-stepper-horizontal": "^1.0.11",
+    "react-tabs": "^3.1.1",
+    "react-tooltip": "^4.2.8",
+    "request-promise": "^4.2.5",
+    "tailwindcss": "^1.1.4",
+    "web-vitals": "^2.1.0",
+    "yarn": "^1.22.4"
+  },
+  "scripts": {
+    "build:css": "postcss src/styles/index.css -o src/styles/main.css",
+    "watch:css": "postcss src/styles/index.css -o src/styles/main.css -w",
+    "start": "npm-run-all -p watch:css start-client",
+    "build": "yarn run build:css",
+    "start-client": "react-scripts start",
+    "dev": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix",
+    "prettier:check": "yarn prettier --check src/**",
+    "prettier:fix": "yarn prettier --write src/**"
+  },
+  "devDependencies": {
+    "eslint": "7.30.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.4.1",
+    "yarn-upgrade-all": "^0.5.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
