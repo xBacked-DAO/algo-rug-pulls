@@ -4,7 +4,7 @@ import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/solid';
 import { AsyncSelectValue } from './ui/Select';
 import { getAsset, searchAsset } from './utils/api';
-import Spinner  from './ui/Spinner';
+import Spinner from './ui/Spinner';
 
 const App = () => {
   const [asset, setAsset] = useState();
@@ -42,7 +42,7 @@ const App = () => {
     }
   };
 
-  const searchForAssetId = async() => {
+  const searchForAssetId = async () => {
     setLoading(true);
     try {
       const res = await getAsset(assetId);
@@ -61,7 +61,7 @@ const App = () => {
         managerAddr: returnedAsset.params.manager,
         url: returnedAsset.params.url,
         total: returnedAsset.params.total
-      }
+      };
       setAsset(formattedAsset);
       setLoading(false);
       return returnedAsset;
@@ -73,7 +73,7 @@ const App = () => {
       }
       return e;
     }
-  }
+  };
 
   return (
     <div className="flex">
@@ -88,13 +88,19 @@ const App = () => {
             Check an Algorand Standard Asset (ASA)
           </h2>
 
-          <p className="pt-3 text-sm font-bold">Check a specific ASA by Asset ID</p>
+          <p className="pt-3 text-sm font-bold">
+            Check a specific ASA by Asset ID
+          </p>
           <input
             className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="text" onChange={e => setAssetId(e.target.value)} />
+            type="text"
+            onChange={(e) => setAssetId(e.target.value)}
+          />
           <button
             className="ml-5 bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded"
-            onClick={() => searchForAssetId()}>Check specific Asset ID</button>
+            onClick={() => searchForAssetId()}>
+            Check specific Asset ID
+          </button>
 
           <p className="pt-3 text-sm font-bold">Search for an ASA by name</p>
 
@@ -122,106 +128,106 @@ const App = () => {
                   ? emoji('✅')
                   : emoji('❌')}
               </p>
-              </div>
+            </div>
           )}
           <div className="border-2 my-5 border-gray-600" />
-              <h3 className="text-lg pt-5">How can I be rugged?</h3>
-              <p className="pt-3">
-                "Rugging" in crypto refers to bad actors creating scam projects,
-                and then "pulling the rug" out from under users
-              </p>
-              <p className="pt-3">
-                On Algorand specifically, clawback and freeze functions are a
-                native feature for ASAs that make it even easier for bad actors to rug pull
-              </p>
+          <h3 className="text-lg pt-5">How can I be rugged?</h3>
+          <p className="pt-3">
+            "Rugging" in crypto refers to bad actors creating scam projects, and
+            then "pulling the rug" out from under users
+          </p>
+          <p className="pt-3">
+            On Algorand specifically, clawback and freeze functions are a native
+            feature for ASAs that make it even easier for bad actors to rug pull
+          </p>
 
-              <p className="pt-3">
-                It's important to note that some protocols will have legitimate uses for these features.
-                Make sure it is clear in their documentation why they require this for their asset.
-              </p>
+          <p className="pt-3">
+            It's important to note that some protocols will have legitimate uses
+            for these features. Make sure it is clear in their documentation why
+            they require this for their asset.
+          </p>
 
-              <div className="mt-6">
-                <Disclosure>
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-200 rounded-lg hover:bg-purple-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                        <span>What is a Clawback?</span>
-                        <ChevronUpIcon
-                          className={`${
-                            !open ? 'transform rotate-180' : ''
-                          } w-5 h-5 text-purple-500`}
-                        />
-                      </Disclosure.Button>
-                      <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm">
-                        <p>
-                          "The clawback address represents an account that is
-                          allowed to transfer assets from and to any asset
-                          holder"
-                        </p>
-                        <a
-                          className="text-sm hover:underline text-gray-600"
-                          href="https://developer.algorand.org/docs/get-details/asa/">
-                          Source
-                        </a>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
+          <div className="mt-6">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-200 rounded-lg hover:bg-purple-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                    <span>What is a Clawback?</span>
+                    <ChevronUpIcon
+                      className={`${
+                        !open ? 'transform rotate-180' : ''
+                      } w-5 h-5 text-purple-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm">
+                    <p>
+                      "The clawback address represents an account that is
+                      allowed to transfer assets from and to any asset holder"
+                    </p>
+                    <a
+                      className="text-sm hover:underline text-gray-600"
+                      href="https://developer.algorand.org/docs/get-details/asa/">
+                      Source
+                    </a>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
 
-                <Disclosure>
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-200 rounded-lg hover:bg-purple-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                        <span>What is a Freeze?</span>
-                        <ChevronUpIcon
-                          className={`${
-                            !open ? 'transform rotate-180' : ''
-                          } w-5 h-5 text-purple-500`}
-                        />
-                      </Disclosure.Button>
-                      <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm">
-                        <p>
-                          "Freezing an asset means that the asset can no longer
-                          be sent to or from that account... A frozen account
-                          can always close out to the asset creator."
-                        </p>
-                        <a
-                          className="text-sm hover:underline text-gray-600"
-                          href="https://developer.algorand.org/tutorials/asa-javascript">
-                          Source
-                        </a>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-200 rounded-lg hover:bg-purple-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                    <span>What is a Freeze?</span>
+                    <ChevronUpIcon
+                      className={`${
+                        !open ? 'transform rotate-180' : ''
+                      } w-5 h-5 text-purple-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm">
+                    <p>
+                      "Freezing an asset means that the asset can no longer be
+                      sent to or from that account... A frozen account can
+                      always close out to the asset creator."
+                    </p>
+                    <a
+                      className="text-sm hover:underline text-gray-600"
+                      href="https://developer.algorand.org/tutorials/asa-javascript">
+                      Source
+                    </a>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
 
-                <Disclosure>
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-200 rounded-lg hover:bg-purple-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                        <span>What is a manager?</span>
-                        <ChevronUpIcon
-                          className={`${
-                            !open ? 'transform rotate-180' : ''
-                          } w-5 h-5 text-purple-500`}
-                        />
-                      </Disclosure.Button>
-                      <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm">
-                        <p>
-                          "The manager account is the only account that can
-                          authorize transactions to re-configure or destroy an
-                          asset."
-                        </p>
-                        <a
-                          className="text-sm hover:underline text-gray-600"
-                          href="https://developer.algorand.org/docs/get-details/asa/#mutable-asset-parameters">
-                          Source
-                        </a>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
-                </div>
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-200 rounded-lg hover:bg-purple-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                    <span>What is a manager?</span>
+                    <ChevronUpIcon
+                      className={`${
+                        !open ? 'transform rotate-180' : ''
+                      } w-5 h-5 text-purple-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm">
+                    <p>
+                      "The manager account is the only account that can
+                      authorize transactions to re-configure or destroy an
+                      asset."
+                    </p>
+                    <a
+                      className="text-sm hover:underline text-gray-600"
+                      href="https://developer.algorand.org/docs/get-details/asa/#mutable-asset-parameters">
+                      Source
+                    </a>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+          </div>
         </div>
       </div>
     </div>
