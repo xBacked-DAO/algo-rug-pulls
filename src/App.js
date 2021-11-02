@@ -3,11 +3,14 @@ import emoji from 'react-easy-emoji';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/solid';
 import { AsyncSelectValue } from './ui/Select';
-import { searchAsset } from './utils/api';
+import { getAsset, searchAsset } from './utils/api';
+import Spinner  from './ui/Spinner';
 
 const App = () => {
   const [asset, setAsset] = useState();
+  const [assetId, setAssetId] = useState();
   const [search, setSearch] = useState();
+  const [loading, setLoading] = useState(false);
   const [assetNotFound, setAssetNotFound] = useState(false);
 
   const searchForAsset = async (name) => {
@@ -39,10 +42,43 @@ const App = () => {
     }
   };
 
+  const searchForAssetId = async() => {
+    setLoading(true);
+    try {
+      const res = await getAsset(assetId);
+      const returnedAsset = res.data.asset;
+      const formattedAsset = {
+        label: `${returnedAsset.params.name} (id: ${returnedAsset.index})`,
+        value: returnedAsset.index,
+        name: returnedAsset.params.name,
+        id: returnedAsset.index,
+        deleted: returnedAsset.deleted,
+        hasFreeze: returnedAsset.params.freeze !== '',
+        freezeAddr: returnedAsset.params.freeze,
+        hasClawback: returnedAsset.params.clawback !== '',
+        clawbackAddr: returnedAsset.params.clawback,
+        hasManager: returnedAsset.params.manager !== '',
+        managerAddr: returnedAsset.params.manager,
+        url: returnedAsset.params.url,
+        total: returnedAsset.params.total
+      }
+      setAsset(formattedAsset);
+      setLoading(false);
+      return returnedAsset;
+    } catch (e) {
+      setLoading(false);
+      console.log(e.response.status);
+      if (e.response.status === 404) {
+        setAssetNotFound(true);
+      }
+      return e;
+    }
+  }
+
   return (
     <div className="flex">
       <div className="m-auto w-3/4">
-        <h1 className="text-2xl text-center">Algo Rug Pulls</h1>
+        <h1 className="text-2xl text-center mt-5">Algo Rug Pulls</h1>
         <p className="subtitle text-center pt-5">
           Helping users of the Algorand Ecosystem detect potential rugs
         </p>
@@ -52,6 +88,16 @@ const App = () => {
             Check an Algorand Standard Asset (ASA)
           </h2>
 
+          <p className="pt-3 text-sm font-bold">Check a specific ASA by Asset ID</p>
+          <input
+            className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text" onChange={e => setAssetId(e.target.value)} />
+          <button
+            className="ml-5 bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded"
+            onClick={() => searchForAssetId()}>Check specific Asset ID</button>
+
+          <p className="pt-3 text-sm font-bold">Search for an ASA by name</p>
+
           <AsyncSelectValue
             loadOptions={searchForAsset}
             onChange={(option) => setAsset(option)}
@@ -60,8 +106,10 @@ const App = () => {
           {assetNotFound && (
             <p>Could not find any assets with term: {search}</p>
           )}
-          {asset && (
+          {loading && <Spinner />}
+          {asset && !loading && (
             <div className="pt-5">
+              <h2 className="text-lg font-bold">Results for {asset.name}</h2>
               <p className="result">
                 No clawback? {asset.hasClawback ? emoji('❌') : emoji('✅')}{' '}
               </p>
@@ -74,15 +122,22 @@ const App = () => {
                   ? emoji('✅')
                   : emoji('❌')}
               </p>
-              <div className="border-2 my-5 border-gray-600" />
+              </div>
+          )}
+          <div className="border-2 my-5 border-gray-600" />
               <h3 className="text-lg pt-5">How can I be rugged?</h3>
               <p className="pt-3">
                 "Rugging" in crypto refers to bad actors creating scam projects,
-                and then "pulling the rug" out form under users
+                and then "pulling the rug" out from under users
               </p>
               <p className="pt-3">
                 On Algorand specifically, clawback and freeze functions are a
-                native feature for ASAs
+                native feature for ASAs that make it even easier for bad actors to rug pull
+              </p>
+
+              <p className="pt-3">
+                It's important to note that some protocols will have legitimate uses for these features.
+                Make sure it is clear in their documentation why they require this for their asset.
               </p>
 
               <div className="mt-6">
@@ -166,9 +221,7 @@ const App = () => {
                     </>
                   )}
                 </Disclosure>
-              </div>
-            </div>
-          )}
+                </div>
         </div>
       </div>
     </div>
