@@ -22,7 +22,13 @@ SelectValue.propTypes = {
   getOptionValue: PropTypes.func.isRequired
 };
 
-export const AsyncSelectValue = ({ value, getOptionValue, onChange, loadOptions, ...rest }) => (
+export const AsyncSelectValue = ({
+  value,
+  getOptionValue,
+  onChange,
+  loadOptions,
+  ...rest
+}) => (
   <AsyncSelect
     cachedOtions
     defaultOptions
@@ -41,4 +47,3 @@ AsyncSelectValue.propTypes = {
   value: PropTypes.object.isRequired,
   getOptionValue: PropTypes.func.isRequired
 };
-
