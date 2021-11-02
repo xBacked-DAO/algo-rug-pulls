@@ -23,7 +23,6 @@ SelectValue.propTypes = {
 };
 
 export const AsyncSelectValue = ({
-  value,
   getOptionValue,
   onChange,
   loadOptions,
@@ -45,5 +44,7 @@ export const AsyncSelectValue = ({
 
 AsyncSelectValue.propTypes = {
   value: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  loadOptions: PropTypes.func.isRequired,
   getOptionValue: PropTypes.func.isRequired
 };

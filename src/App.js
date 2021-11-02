@@ -35,7 +35,6 @@ const App = () => {
       }));
       return formatForSelect;
     } catch (e) {
-      console.log(e.response.status);
       if (e.response.status === 404) {
         setAssetNotFound(true);
       }
@@ -68,7 +67,6 @@ const App = () => {
       return returnedAsset;
     } catch (e) {
       setLoading(false);
-      console.log(e.response.status);
       if (e.response.status === 404) {
         setAssetNotFound(true);
       }
@@ -103,7 +101,9 @@ const App = () => {
           />
           <button
             className="md:ml-5 mt-5 md:mt-0 lg:mt-0 bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded"
-            onClick={() => searchForAssetId()}>
+            onClick={() => searchForAssetId()}
+            type="button"
+          >
             Check specific Asset ID
           </button>
 
