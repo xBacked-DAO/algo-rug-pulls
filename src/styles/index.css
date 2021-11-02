@@ -11,13 +11,3 @@ body {
     display: inline;
   }
 }
-
-.fixed-plug {
-  position: absolute;
-  left: 0;
-  top: 0;
-  img {
-    width: 10%;
-  }
-  @apply bg-black font-white;
-}

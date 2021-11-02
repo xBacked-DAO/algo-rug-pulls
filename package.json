@@ -39,7 +39,7 @@
     "build:css": "postcss src/styles/index.css -o src/styles/main.css",
     "watch:css": "postcss src/styles/index.css -o src/styles/main.css -w",
     "start": "npm-run-all -p watch:css start-client",
-    "build": "yarn run build:css",
+    "build": "yarn run build:css && react-scripts build",
     "start-client": "react-scripts start",
     "dev": "react-scripts start",
     "test": "react-scripts test",

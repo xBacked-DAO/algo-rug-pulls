@@ -79,7 +79,7 @@ const App = () => {
   return (
     <div className="flex">
       <div className="m-auto w-3/4">
-        <h1 className="text-2xl text-center mt-5">Algo Rug Pulls</h1>
+        <h1 className="text-2xl text-center mt-10">Algo Rug Pulls</h1>
         <div className="fixed-plug bg-black font-white p-1 fixed right-0 top-0">
           <a href="https://xbacked.io" className="inline text-sm text-white hover:underline">Built by xBacked</a>
           <img className="inline w-8" src={logo} alt="xbacked-logo" />
@@ -93,7 +93,7 @@ const App = () => {
             Check an Algorand Standard Asset (ASA)
           </h2>
 
-          <p className="pt-3 text-sm font-bold">
+          <p className="pt-3 text-sm font-bold mb-5">
             Check a specific ASA by Asset ID
           </p>
           <input
@@ -102,7 +102,7 @@ const App = () => {
             onChange={(e) => setAssetId(e.target.value)}
           />
           <button
-            className="ml-5 bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded"
+            className="md:ml-5 mt-5 md:mt-0 lg:mt-0 bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded"
             onClick={() => searchForAssetId()}>
             Check specific Asset ID
           </button>
