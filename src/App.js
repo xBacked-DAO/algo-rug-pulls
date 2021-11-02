@@ -24,6 +24,7 @@ const App = () => {
         name: asset.params.name,
         id: asset.index,
         deleted: asset.deleted,
+        verified: asset.params.verified,
         hasFreeze: asset.params.freeze !== '',
         freezeAddr: asset.params.freeze,
         hasClawback: asset.params.clawback !== '',
@@ -53,6 +54,7 @@ const App = () => {
         name: returnedAsset.params.name,
         id: returnedAsset.index,
         deleted: returnedAsset.deleted,
+        verified: returnedAsset.params.verified,
         hasFreeze: returnedAsset.params.freeze !== '',
         freezeAddr: returnedAsset.params.freeze,
         hasClawback: returnedAsset.params.clawback !== '',
@@ -128,6 +130,9 @@ const App = () => {
                 Has freeze? {!asset.hasFreeze ? emoji('❌') : emoji('✅')}{' '}
               </p>
               <p className="result">
+                Verified? <a href={`https://algoexplorer.io/asset/${asset.id}`} target="_blank" className="underline hover:cursor" rel="noreferrer">Click here to check verification on AlgoExplorer</a> {emoji('🛡️')}
+              </p>
+              <p className="result">
                 Could it Rug?{' '}
                 {asset.hasClawback || asset.hasFreeze || asset.hasManager
                   ? emoji('✅')
@@ -148,8 +153,9 @@ const App = () => {
 
           <p className="pt-3">
             It's important to note that some protocols will have legitimate uses
-            for these features. Make sure it is clear in their documentation why
-            they require this for their asset, and how access to these features is contolled.
+            for these features, especially if they are verified assets.
+            Make sure it is clear in their documentation why they require this for their asset,
+            and how access to these features is contolled.
           </p>
 
           <div className="mt-6">
