@@ -1,5 +1,5 @@
 # algo-rug-pulls
-Look up ASAs and Applications on Algorand, and check if they could be a rug
+Look up ASAs on Algorand, and check if they could be a rug
 
 
 ## What is a Rug Pull?
@@ -15,3 +15,5 @@ On Algorand, Algorand Standard Assets (ASAs) have in built clawback and freeze m
 Moreover, smart contracts on Algorand can be updated, even after they have been audited.
 
 This tool aims to help protect people in the Algorand ecosystem from _potential_ rugs.
+
+:warning: _Disclaimer: we are not claiming any proejcts are a rug. We are simply displaying information, and explaining what it means to consumers._

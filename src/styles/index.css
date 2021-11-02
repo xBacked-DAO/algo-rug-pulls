@@ -6,58 +6,8 @@ body {
   @apply bg-gray-200;
 }
 
-.landing-container {
-  margin: 0 auto;
-  max-width: 1268px;
-}
-
-.basic-form-input {
-  @apply shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight;
-  &:focus {
-    @apply outline-none shadow-outline;
+.result {
+  img {
+    display: inline;
   }
-}
-
-.btn {
-  @apply text-white font-bold py-2 px-4 rounded;
-}
-
-.btn-purple {
-  background-color: #5e366a;
-  &:hover {
-    background-color: #331940;
-    cursor: pointer;
-  }
-  &:focus {
-    @apply outline-none;
-  }
-}
-
-.form-error {
-  @apply text-red-600 text-sm py-2;
-}
-
-.vendor-card {
-  @apply rounded-md shadow p-2 h-full relative;
-  &:hover {
-    @apply shadow-lg cursor-pointer;
-  }
-  .vendor-check {
-    color: #0cca98;
-    font-size: 3rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.vendor-checked-wrapper {
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.8);
-  height: 100%;
-  width: 100%;
 }

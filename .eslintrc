@@ -1,5 +1,6 @@
 {
   "extends": ["airbnb", "prettier"],
+  "ignorePatterns": ["build"],
   "globals": {
     "localStorage": true,
     "React": "writable",
@@ -33,12 +34,7 @@
     "react/button-has-type": "warn",
     "react/prop-types": "warn",
     "semi": "warn",
-    "max-len": [
-      "warn",
-      {
-        "code": 120
-      }
-    ],
+    "max-len": 0,
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -57,7 +53,7 @@
         "varsIgnorePattern": "^_"
       }
     ],
-    "react/no-unescaped-entities": "warn",
+    "react/no-unescaped-entities": 0,
     "import/no-unresolved": ["error", { "ignore": ["reach-sh", "build"] }],
     "import/extensions": [
       "error",
