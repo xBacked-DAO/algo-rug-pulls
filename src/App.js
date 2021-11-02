@@ -144,7 +144,7 @@ const App = () => {
           <p className="pt-3">
             It's important to note that some protocols will have legitimate uses
             for these features. Make sure it is clear in their documentation why
-            they require this for their asset.
+            they require this for their asset, and how access to these features is contolled.
           </p>
 
           <div className="mt-6">
@@ -227,6 +227,10 @@ const App = () => {
                 </>
               )}
             </Disclosure>
+            <p className="text-xs italic mt-10 result">
+              {emoji('⚠️')} Disclaimer: we are not claiming any proejcts are a rug.
+              We are simply displaying information, and explaining what it means to consumers.
+            </p>
           </div>
         </div>
       </div>
