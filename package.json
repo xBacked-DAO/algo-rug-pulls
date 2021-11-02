@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.4.1",
+    "@heroicons/react": "^1.0.5",
+    "add": "^2.0.6",
+    "axios": "^0.24.0",
     "babel-eslint": "^10.1.0",
     "classnames": "^2.2.6",
     "dotenv": "^10.0.0",
@@ -14,7 +18,9 @@
     "prop-types": "^15.7.2",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
+    "react-debounce-input": "^3.2.5",
     "react-dom": "^17.0.2",
+    "react-easy-emoji": "^1.6.1",
     "react-emoji-render": "^1.2.4",
     "react-hook-form": "^7.10.0",
     "react-icons": "^4.2.0",
@@ -25,10 +31,9 @@
     "react-stepper-horizontal": "^1.0.11",
     "react-tabs": "^3.1.1",
     "react-tooltip": "^4.2.8",
-    "request-promise": "^4.2.5",
     "tailwindcss": "^1.1.4",
     "web-vitals": "^2.1.0",
-    "yarn": "^1.22.4"
+    "yarn": "^1.22.17"
   },
   "scripts": {
     "build:css": "postcss src/styles/index.css -o src/styles/main.css",

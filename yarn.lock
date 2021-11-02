@@ -1944,6 +1944,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@headlessui/react@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "@headlessui/react@npm:1.4.1"
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+    react-dom: ^16 || ^17 || ^18
+  checksum: e036941e31b02a17e8c27b018d40cced1e7165ec85ce00cddf74884349e86cb7ef75e3c645d7d0f133f63dfbac97ad4a5765d996db3b8f3cc4a678c84402ad6e
+  languageName: node
+  linkType: hard
+
+"@heroicons/react@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@heroicons/react@npm:1.0.5"
+  peerDependencies:
+    react: ">= 16"
+  checksum: 12114af19c17f69140cc7338e4cd12fe38098ad3ed79f02762106160655cde3ebdba58a2b26f1067f720786187364fd9465bc72f02aad85b0ead8172d76aa51d
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.5.0":
   version: 0.5.0
   resolution: "@humanwhocodes/config-array@npm:0.5.0"
@@ -3150,6 +3169,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"add@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "add@npm:2.0.6"
+  checksum: e2d23d40494565dfed4acd65e478570c444db5ac6c053551ed429c39ea0f2c99d83df63e7befec936df601827d2254d06a2fb6f7dcfd2022e810b25eab818b8c
+  languageName: node
+  linkType: hard
+
 "address@npm:1.1.2, address@npm:^1.0.1":
   version: 1.1.2
   resolution: "address@npm:1.1.2"
@@ -3632,6 +3658,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "axios@npm:0.24.0"
+  dependencies:
+    follow-redirects: ^1.14.4
+  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
+  languageName: node
+  linkType: hard
+
 "axobject-query@npm:^2.2.0":
   version: 2.2.0
   resolution: "axobject-query@npm:2.2.0"
@@ -3991,7 +4026,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bluebird@npm:^3.5.0, bluebird@npm:^3.5.5":
+"bluebird@npm:^3.5.5":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
   checksum: 869417503c722e7dc54ca46715f70e15f4d9c602a423a02c825570862d12935be59ed9c7ba34a9b31f186c017c23cac6b54e35446f8353059c101da73eac22ef
@@ -7172,6 +7207,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.14.4":
+  version: 1.14.5
+  resolution: "follow-redirects@npm:1.14.5"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: f004a76b2ee3a849772c2816e30928253bf47537b0f00184d89f4966413add96a228a4d96ca8c702bc045a683c52c2ba41545c915cc1a5e33bf8fd9d07b59aee
+  languageName: node
+  linkType: hard
+
 "for-in@npm:^1.0.2":
   version: 1.0.2
   resolution: "for-in@npm:1.0.2"
@@ -9713,7 +9758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.debounce@npm:^4.0.8":
+"lodash.debounce@npm:^4, lodash.debounce@npm:^4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
   checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
@@ -12517,7 +12562,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"psl@npm:^1.1.28, psl@npm:^1.1.33":
+"psl@npm:^1.1.33":
   version: 1.8.0
   resolution: "psl@npm:1.8.0"
   checksum: 6150048ed2da3f919478bee8a82f3828303bc0fc730fb015a48f83c9977682c7b28c60ab01425a72d82a2891a1681627aa530a991d50c086b48a3be27744bde7
@@ -12736,6 +12781,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-debounce-input@npm:^3.2.5":
+  version: 3.2.5
+  resolution: "react-debounce-input@npm:3.2.5"
+  dependencies:
+    lodash.debounce: ^4
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ^15.3.0 || ^16.0.0 || ^17.0.0
+  checksum: 22b0d6f898421991fde4e477db57b676e3cfd82726c5a74e88cb82ba24a544613ca62bba49d87196033314c2d60bfd0a52965d2cd09018c1729c47f78c09688a
+  languageName: node
+  linkType: hard
+
 "react-dev-utils@npm:^11.0.3":
   version: 11.0.4
   resolution: "react-dev-utils@npm:11.0.4"
@@ -12792,6 +12849,21 @@ __metadata:
   peerDependencies:
     react: 17.0.2
   checksum: 1c1eaa3bca7c7228d24b70932e3d7c99e70d1d04e13bb0843bbf321582bc25d7961d6b8a6978a58a598af2af496d1cedcfb1bf65f6b0960a0a8161cb8dab743c
+  languageName: node
+  linkType: hard
+
+"react-easy-emoji@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "react-easy-emoji@npm:1.6.1"
+  dependencies:
+    string-replace-to-array: ^2.1.0
+  peerDependencies:
+    "@types/react": ^0.14.0
+    react: ">=0.14.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 398372bdb214530cd82d7b331a95d19c3df70f968271e7764eed69dc2679907e563105509e8c7ea968d08637275e6f360812ce51c1a04966946f84d5c66eeebf
   languageName: node
   linkType: hard
 
@@ -13348,31 +13420,6 @@ __metadata:
   version: 1.6.1
   resolution: "repeat-string@npm:1.6.1"
   checksum: 1b809fc6db97decdc68f5b12c4d1a671c8e3f65ec4a40c238bc5200e44e85bcc52a54f78268ab9c29fcf5fe4f1343e805420056d1f30fa9a9ee4c2d93e3cc6c0
-  languageName: node
-  linkType: hard
-
-"request-promise-core@npm:1.1.4":
-  version: 1.1.4
-  resolution: "request-promise-core@npm:1.1.4"
-  dependencies:
-    lodash: ^4.17.19
-  peerDependencies:
-    request: ^2.34
-  checksum: c798bafd552961e36fbf5023b1d081e81c3995ab390f1bc8ef38a711ba3fe4312eb94dbd61887073d7356c3499b9380947d7f62faa805797c0dc50f039425699
-  languageName: node
-  linkType: hard
-
-"request-promise@npm:^4.2.5":
-  version: 4.2.6
-  resolution: "request-promise@npm:4.2.6"
-  dependencies:
-    bluebird: ^3.5.0
-    request-promise-core: 1.1.4
-    stealthy-require: ^1.1.1
-    tough-cookie: ^2.3.3
-  peerDependencies:
-    request: ^2.34
-  checksum: 1856c718cb4b888db8b6a206537ecac47390ea4fbdaef00da9a6169a03dd66a95c38493713f927f78a19bfeb28dcb28f5d20f6ab927d644d9e0626847d808f9f
   languageName: node
   linkType: hard
 
@@ -14425,13 +14472,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stealthy-require@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "stealthy-require@npm:1.1.1"
-  checksum: 6805b857a9f3a6a1079fc6652278038b81011f2a5b22cbd559f71a6c02087e6f1df941eb10163e3fdc5391ab5807aa46758d4258547c1f5ede31e6d9bfda8dd3
-  languageName: node
-  linkType: hard
-
 "stream-browserify@npm:^2.0.1":
   version: 2.0.2
   resolution: "stream-browserify@npm:2.0.2"
@@ -14511,6 +14551,13 @@ __metadata:
     lodash.flatten: ^4.2.0
     lodash.isstring: ^4.0.1
   checksum: f0da1bf239934739471166cd34d5003b386f660db40cc1c6842eae4f250656b80ffc5983bdef344f934fc897d1df4ae6efff9ce43a663a6ab450d53b618a83c6
+  languageName: node
+  linkType: hard
+
+"string-replace-to-array@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "string-replace-to-array@npm:2.1.0"
+  checksum: e53add3885534f2460ba512c4edd00d2b4089d4c9e3913b6404db3a5236bb3fa47a26cd43d335ef173b8ca59c099de6e04bc8a3aa6832b3b51f4d50583d04a3a
   languageName: node
   linkType: hard
 
@@ -15130,16 +15177,6 @@ __metadata:
   version: 1.0.0
   resolution: "toidentifier@npm:1.0.0"
   checksum: 199e6bfca1531d49b3506cff02353d53ec987c9ee10ee272ca6484ed97f1fc10fb77c6c009079ca16d5c5be4a10378178c3cacdb41ce9ec954c3297c74c6053e
-  languageName: node
-  linkType: hard
-
-"tough-cookie@npm:^2.3.3":
-  version: 2.5.0
-  resolution: "tough-cookie@npm:2.5.0"
-  dependencies:
-    psl: ^1.1.28
-    punycode: ^2.1.1
-  checksum: 16a8cd090224dd176eee23837cbe7573ca0fa297d7e468ab5e1c02d49a4e9a97bb05fef11320605eac516f91d54c57838a25864e8680e27b069a5231d8264977
   languageName: node
   linkType: hard
 
@@ -16278,6 +16315,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "xbacked-client@workspace:."
   dependencies:
+    "@headlessui/react": ^1.4.1
+    "@heroicons/react": ^1.0.5
+    add: ^2.0.6
+    axios: ^0.24.0
     babel-eslint: ^10.1.0
     classnames: ^2.2.6
     dotenv: ^10.0.0
@@ -16299,7 +16340,9 @@ __metadata:
     prop-types: ^15.7.2
     query-string: ^7.0.1
     react: ^17.0.2
+    react-debounce-input: ^3.2.5
     react-dom: ^17.0.2
+    react-easy-emoji: ^1.6.1
     react-emoji-render: ^1.2.4
     react-hook-form: ^7.10.0
     react-icons: ^4.2.0
@@ -16310,10 +16353,9 @@ __metadata:
     react-stepper-horizontal: ^1.0.11
     react-tabs: ^3.1.1
     react-tooltip: ^4.2.8
-    request-promise: ^4.2.5
     tailwindcss: ^1.1.4
     web-vitals: ^2.1.0
-    yarn: ^1.22.4
+    yarn: ^1.22.17
     yarn-upgrade-all: ^0.5.4
   languageName: unknown
   linkType: soft
@@ -16436,13 +16478,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yarn@npm:^1.22.4":
-  version: 1.22.10
-  resolution: "yarn@npm:1.22.10"
+"yarn@npm:^1.22.17":
+  version: 1.22.17
+  resolution: "yarn@npm:1.22.17"
   bin:
-    yarn: bin/yarn.js
-    yarnpkg: bin/yarn.js
-  checksum: bc7ebba3d91090310b1db28af1f9fc913b8936693f4c41031db67e5c10ba171a23b343173cd3d0ea91d388e38e6244d17292278cf6c563b1dd7f8e5d0df77b4c
+    yarn: ./bin/yarn.js
+    yarnpkg: ./bin/yarn.js
+  checksum: 9d5211477d439a4d7b5632d7c290a3be36d2edc13599b64964bff520d3a3a480db85010f3262293981abb4e618ac92aaafa4c4c54bae50a7713c7b8ec431adac
   languageName: node
   linkType: hard
 
