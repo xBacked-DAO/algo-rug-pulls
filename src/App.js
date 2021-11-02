@@ -5,6 +5,7 @@ import { ChevronUpIcon } from '@heroicons/react/solid';
 import { AsyncSelectValue } from './ui/Select';
 import { getAsset, searchAsset } from './utils/api';
 import Spinner from './ui/Spinner';
+import logo from './assets/xbacked-logo.png';
 
 const App = () => {
   const [asset, setAsset] = useState();
@@ -79,6 +80,10 @@ const App = () => {
     <div className="flex">
       <div className="m-auto w-3/4">
         <h1 className="text-2xl text-center mt-5">Algo Rug Pulls</h1>
+        <div className="fixed-plug bg-black font-white p-1 fixed right-0 top-0">
+          <a href="https://xbacked.io" className="inline text-sm text-white hover:underline">Built by xBacked</a>
+          <img className="inline w-8" src={logo} alt="xbacked-logo" />
+        </div>
         <p className="subtitle text-center pt-5">
           Helping users of the Algorand Ecosystem detect potential rugs
         </p>
@@ -117,10 +122,10 @@ const App = () => {
             <div className="pt-5">
               <h2 className="text-lg font-bold">Results for {asset.name}</h2>
               <p className="result">
-                No clawback? {asset.hasClawback ? emoji('❌') : emoji('✅')}{' '}
+                Has clawback? {!asset.hasClawback ? emoji('❌') : emoji('✅')}{' '}
               </p>
               <p className="result">
-                No freeze? {asset.hasFreeze ? emoji('❌') : emoji('✅')}{' '}
+                Has freeze? {!asset.hasFreeze ? emoji('❌') : emoji('✅')}{' '}
               </p>
               <p className="result">
                 Could it Rug?{' '}
