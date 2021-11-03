@@ -134,6 +134,9 @@ const App = () => {
                 Has freeze? {!asset.hasFreeze ? emoji('❌') : emoji('✅')}{' '}
               </p>
               <p className="result">
+                Has Manager? {!asset.hasManager ? emoji('❌') : emoji('✅')}{' '}
+              </p>
+              <p className="result">
                 Verified? <a href={`https://algoexplorer.io/asset/${asset.id}`} target="_blank" className="underline hover:cursor" rel="noreferrer">Click here to check verification on AlgoExplorer</a> {emoji('🛡️')}
               </p>
               <p className="result">
