@@ -7,6 +7,10 @@ import { getAsset, searchAsset } from './utils/api';
 import Spinner from './ui/Spinner';
 import logo from './assets/xbacked-logo.png';
 
+
+// algo explorer will return this instead of a null or empty string.
+const nullAddr = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY5HFKQ';
+
 const App = () => {
   const [asset, setAsset] = useState();
   const [assetId, setAssetId] = useState();
@@ -25,11 +29,11 @@ const App = () => {
         id: asset.index,
         deleted: asset.deleted,
         verified: asset.params.verified,
-        hasFreeze: asset.params.freeze !== '',
+        hasFreeze: asset.params.freeze !== nullAddr,
         freezeAddr: asset.params.freeze,
-        hasClawback: asset.params.clawback !== '',
+        hasClawback: asset.params.clawback !== nullAddr,
         clawbackAddr: asset.params.clawback,
-        hasManager: asset.params.manager !== '',
+        hasManager: asset.params.manager !== nullAddr,
         managerAddr: asset.params.manager,
         url: asset.params.url,
         total: asset.params.total
@@ -55,11 +59,11 @@ const App = () => {
         id: returnedAsset.index,
         deleted: returnedAsset.deleted,
         verified: returnedAsset.params.verified,
-        hasFreeze: returnedAsset.params.freeze !== '',
+        hasFreeze: returnedAsset.params.freeze !== nullAddr,
         freezeAddr: returnedAsset.params.freeze,
-        hasClawback: returnedAsset.params.clawback !== '',
+        hasClawback: returnedAsset.params.clawback !== nullAddr,
         clawbackAddr: returnedAsset.params.clawback,
-        hasManager: returnedAsset.params.manager !== '',
+        hasManager: returnedAsset.params.manager !== nullAddr,
         managerAddr: returnedAsset.params.manager,
         url: returnedAsset.params.url,
         total: returnedAsset.params.total
