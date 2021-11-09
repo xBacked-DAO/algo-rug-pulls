@@ -10,7 +10,7 @@ This usually looks like them running away with a bunch of your tokens
 
 ## Rugs on Algorand
 
-On Algorand, Algorand Standard Assets (ASAs) have in built clawback and freeze mechnaisms. This means if you buy tokens with a clawback or freeze, they could be retrieved from your wallet or frozen.
+On Algorand, Algorand Standard Assets (ASAs) have in built clawback and freeze mechanisms. This means if you buy tokens with a clawback or freeze, they could be retrieved from your wallet or frozen.
 
 Moreover, smart contracts on Algorand can be updated, even after they have been audited.
 
